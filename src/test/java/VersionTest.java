@@ -26,9 +26,9 @@ public class VersionTest {
             new ComparableVersion("1.0-cr1"),
             new ComparableVersion("1.0-SNAPSHOT"),
             new ComparableVersion("1.0"),
+            new ComparableVersion("1.0-RELEASE"),
             new ComparableVersion("1.0-sp"),
             new ComparableVersion("1.0-a"),
-            new ComparableVersion("1.0-RELEASE"),
             new ComparableVersion("1.0-whatever"),
             new ComparableVersion("1.0.z"),
             new ComparableVersion("1.0.1"),
@@ -109,5 +109,24 @@ public class VersionTest {
         assertEquals(new ComparableVersion("1-0-ga"), new ComparableVersion("1.0"));
         assertEquals(new ComparableVersion("1-0-final"), new ComparableVersion("1-0"));
         assertEquals(new ComparableVersion("1-0"), new ComparableVersion("1.0"));
+    }
+
+    /**
+     * Testing various scenarios where feature branches are embedded into the version. These
+     * don't produce the results you might expect.
+     */
+    @Test
+    public void testFeatureBranches() {
+        assertTrue(new ComparableVersion("1.2.1-ga").compareTo(
+                new ComparableVersion("1.2.1.myfeature-ga")) < 0);
+
+        assertTrue(new ComparableVersion("1.2.1").compareTo(
+                new ComparableVersion("1.2.1.myfeature")) < 0);
+
+        assertTrue(new ComparableVersion("1.2.1").compareTo(
+                new ComparableVersion("1.2.1-myfeature")) < 0);
+
+        assertTrue(new ComparableVersion("1.2.1-ga").compareTo(
+                new ComparableVersion("1.2.1-zyfeature")) < 0);
     }
 }
