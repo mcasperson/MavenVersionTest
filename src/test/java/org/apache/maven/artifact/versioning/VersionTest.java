@@ -9,6 +9,9 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertArrayEquals;
 
+/**
+ * https://octopus.com/blog/maven-versioning-explained
+ */
 public class VersionTest {
 
     private static final ComparableVersion[] VERSIONS = new ComparableVersion[]{
