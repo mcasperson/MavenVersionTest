@@ -1,8 +1,0 @@
-org\apache\maven\artifact\versioning\ComparableVersion.class
-org\apache\maven\artifact\versioning\ComparableVersion$Item.class
-org\apache\maven\artifact\versioning\ComparableVersion$ListItem.class
-org\apache\maven\artifact\versioning\ComparableVersion$StringItem.class
-org\apache\maven\artifact\versioning\ComparableVersion$1.class
-org\apache\maven\artifact\versioning\ComparableVersion$LongItem.class
-org\apache\maven\artifact\versioning\ComparableVersion$BigIntegerItem.class
-org\apache\maven\artifact\versioning\ComparableVersion$IntItem.class
